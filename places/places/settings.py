@@ -26,7 +26,7 @@ SECRET_KEY = '7&&s*f#)s9wc2bu7i*2&tvg0auxzxkaiu5fvb$#p0nmn0j7qb-'
 DEBUG = True
 TESTS = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -84,8 +84,12 @@ if TESTS:
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'places_db',
+            'USER': 'places_user',
+            'PASSWORD': 'isis2503',
+            'HOST': '10.128.0.12',
+            'PORT': '5432',
         }
     }
 
